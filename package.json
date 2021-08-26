@@ -1,0 +1,28 @@
+{
+  "name": "strip-debug-loader",
+  "version": "1.0.0",
+  "description": "Strips debug imports, declarations and expressions from your webpack bundles",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/morganney/strip-debug-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morganney/strip-debug-loader/issues"
+  },
+  "keywords": [
+    "strip",
+    "remove",
+    "debug",
+    "webpack",
+    "loader"
+  ],
+  "author": "Morgan Ney <morganney@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "debug": "^4.3.2"
+  }
+}
