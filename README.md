@@ -1,4 +1,4 @@
-# strip-debug-loader
+# webpack-strip-debug-loader
 
 Removes [`debug`](https://www.npmjs.com/package/debug) usage from your source code during Webpack builds.
 
@@ -43,7 +43,7 @@ module: {
     {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['strip-debug-loader']
+        use: ['webpack-strip-debug-loader']
     }
   ]
 }
