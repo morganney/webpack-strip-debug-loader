@@ -8,7 +8,7 @@ First `npm install strip-debug-loader debug`.
 
 ### Debugging
 
-You must use the wrapper around `debug` named `Debug` that this package exposes. All debug functions must be prefixed with `debug` or they will not be removed.
+You must use the wrapper around [`debug`](https://www.npmjs.com/package/debug) named `Debug` that this package exposes. All debug functions must be prefixed with `debug` or they will not be removed.
 
 Do not:
 * Alias your `import` or `require` of `Debug`
