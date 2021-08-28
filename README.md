@@ -19,7 +19,7 @@ Do not:
 Just make simple debug statements.
 
 ```js
-import { Debug } from 'strip-debug-loader'
+import { Debug } from 'webpack-strip-debug-loader'
 
 const debug = Debug('feature')
 const debugFoo = Debug('bar')

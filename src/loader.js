@@ -1,10 +1,7 @@
-const purge = require('./purge')
-const debug = require('./debug')
+import { purge } from './purge'
 
 const loader = function(source, map, meta) {
   this.callback(null, purge(source), map, meta)
 }
 
-loader.Debug = debug
-
-module.exports = loader
+export { loader }

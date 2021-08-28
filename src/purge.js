@@ -9,4 +9,4 @@ const purge = source => {
   )
 }
 
-module.exports = purge
+export { purge }

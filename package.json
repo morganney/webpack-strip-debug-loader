@@ -1,14 +1,17 @@
 {
   "name": "webpack-strip-debug-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Strips debug imports, declarations and expressions from your webpack bundles",
-  "main": "src/index.js",
+  "main": "dist",
   "repository": {
     "type": "git",
     "url": "https://github.com/morganney/webpack-strip-debug-loader.git"
   },
   "bugs": {
     "url": "https://github.com/morganney/webpack-strip-debug-loader/issues"
+  },
+  "scripts": {
+    "prepack": "babel src --out-dir dist"
   },
   "keywords": [
     "strip",
@@ -20,9 +23,14 @@
   "author": "Morgan Ney <morganney@gmail.com>",
   "license": "MIT",
   "files": [
-    "src"
+    "dist"
   ],
   "peerDependencies": {
     "debug": "^4.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0"
   }
 }
