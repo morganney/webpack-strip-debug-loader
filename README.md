@@ -4,7 +4,7 @@ Removes [`debug`](https://www.npmjs.com/package/debug) usage from your source co
 
 ## Usage
 
-First `npm install strip-debug-loader debug`.
+First `npm install webpack-strip-debug-loader debug`.
 
 ### Debugging
 
@@ -12,8 +12,8 @@ You must use the wrapper around [`debug`](https://www.npmjs.com/package/debug) n
 
 Do not:
 * Alias your `import` or `require` of `Debug`
-* Put more than one debug() call on a single line
-* Have a comment including a debug('call')
+* Put more than one `debug()` call on a single line
+* Have a comment including a `debug('call')`
 * Other crazy things
 
 Just make simple debug statements.
@@ -22,7 +22,7 @@ Just make simple debug statements.
 import { Debug } from 'webpack-strip-debug-loader'
 
 const debug = Debug('feature')
-const debugFoo = Debug('bar')
+const debugFoo = Debug('foo')
 
 if (somethingOfInterestHappens) {
   debug('something happened')
