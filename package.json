@@ -1,6 +1,6 @@
 {
   "name": "webpack-strip-debug-loader",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Strips debug imports, declarations and expressions from your webpack bundles",
   "main": "dist",
   "repository": {
