@@ -1,12 +1,11 @@
-const purge = source => {
-  // No Imports: /import\s.+\sfrom\s+['"]webpack-strip-debug-loader['"]|.*require\(['"]webpack-strip-debug-loader['"]\).*/
-  // No Declarations: /(var|let|const)?\s+debug(\w?)+\s*=\s*Debug\([\s\S]*?.*\)/g
-  // No Invocations: /\s*debug(\w?)+\s*?\([\s\S]*?.*\s*\)(?![\),])/g
+const imports =
+  /import\s.+\sfrom\s+['"]webpack-strip-debug-loader['"]|.*require\(['"]webpack-strip-debug-loader['"]\).*/
+const declarations = /(var|let|const)?\s*debug(\w?)+\s*=\s*Debug\([\s\S]*?.*\)/
+const invocations = /\s*debug(\w?)+\s*?\([\s\S]*?.*\s*\)(?![),])/
+const debugCode = new RegExp(
+  `${imports.source}|${declarations.source}|${invocations.source}`,
+  'g'
+)
+const purge = source => source.replace(debugCode, '\n')
 
-  return source.replace(
-    /(import\s.+\sfrom\s+['"]webpack-strip-debug-loader['"]|.*require\(['"]webpack-strip-debug-loader['"]\).*)|((var|let|const)?\s+debug(\w?)+\s*=\s*Debug\([\s\S]*?.*\))|(\s*debug(\w?)+\s*?\([\s\S]*?.*\s*\)(?![\),]))/g,
-    '\n'
-  )
-}
-
-export { purge }
+export { imports, declarations, invocations, debugCode, purge }
