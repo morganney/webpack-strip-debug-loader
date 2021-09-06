@@ -1,6 +1,9 @@
 import fs from 'fs'
+import { execSync } from 'child_process'
 
 import pkg from './package.json'
+
+execSync('babel src --out-dir dist')
 
 /**
  * Remove "type": "module" until webpack supports ES modules better
