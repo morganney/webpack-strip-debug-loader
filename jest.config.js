@@ -4,7 +4,10 @@ export default {
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'text-summary'],
   testMatch: [
     '**/__tests__/**/*.js',
-    // Has to wait for better ESM support from webpack
+    /**
+     * Has to wait for better ESM suport for webpack loaders
+     * @see https://github.com/webpack/loader-runner/issues/61
+     */
     '!**/__tests__/loader.js',
     /**
      * Has to wait for better support for mocks when using ESM
