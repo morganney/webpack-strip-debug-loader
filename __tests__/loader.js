@@ -1,4 +1,4 @@
-import path, { join, dirname, resolve } from 'path'
+import path from 'path'
 import { fileURLToPath } from 'url'
 
 import webpack from 'webpack'
@@ -6,6 +6,7 @@ import { createFsFromVolume, Volume } from 'memfs'
 
 import { debugCode } from '../src/purge.js'
 
+const { dirname, resolve } = path
 const filename = fileURLToPath(import.meta.url)
 const directory = dirname(filename)
 const build = entry => {
@@ -20,28 +21,28 @@ const build = entry => {
       rules: [
         {
           test: /\.js$/,
-          use: {
-            loader: resolve(directory, '../src/loader.js')
-          }
+          exclude: /node_modules/,
+          type: 'module',
+          loader: resolve(directory, '../src/loader.js')
         }
       ]
     }
   })
 
+  compiler.outputFileSystem.join = path.join.bind(path)
   compiler.outputFileSystem = createFsFromVolume(new Volume())
-  compiler.outputFileSystem.join = join.bind(path)
 
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
       if (err) {
-        reject(err)
+        return reject(err)
       }
 
       if (stats.hasErrors()) {
-        reject(stats.toJson().errors)
+        return reject(stats.toJson().errors)
       }
 
-      resolve(stats)
+      return resolve(stats)
     })
   })
 }
