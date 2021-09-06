@@ -13,6 +13,7 @@
   },
   "scripts": {
     "prepack": "babel src --out-dir dist",
+    "postpack": "node --experimental-json-modules ./postpack.js",
     "lint": "eslint . src __tests__ --ext .js,.cjs",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
