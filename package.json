@@ -12,8 +12,7 @@
     "url": "https://github.com/morganney/webpack-strip-debug-loader/issues"
   },
   "scripts": {
-    "prepack": "babel src --out-dir dist",
-    "postpack": "node --experimental-json-modules ./postpack.js",
+    "prepack": "node --experimental-json-modules ./prepack.js",
     "lint": "eslint . src __tests__ --ext .js,.cjs",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
