@@ -7,4 +7,6 @@ import pkg from './package.json'
  */
 delete pkg.type
 
+pkg.main = 'index.js'
+
 fs.writeFileSync('./dist/package.json', JSON.stringify(pkg, null, 2))
