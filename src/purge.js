@@ -1,5 +1,5 @@
 const imports =
-  /import\s.+\sfrom\s+['"]webpack-strip-debug-loader['"]|.*require\(['"]webpack-strip-debug-loader['"]\).*/
+  /import\s?{\s*?Debug\s*?}\sfrom\s+['"]webpack-strip-debug-loader['"]|.*require\(['"]webpack-strip-debug-loader['"]\).*/
 const declarations = /(var|let|const)?\s*debug(\w?)+\s*=\s*Debug\([\s\S]*?.*\)/
 const invocations = /\s*debug(\w?)+\s*?\([\s\S]*?.*\s*\)(?![),])/
 const debugCode = new RegExp(

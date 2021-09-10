@@ -15,6 +15,11 @@ describe('purge', () => {
   it('removes imports for Debug', () => {
     expect(purge("import { Debug } from 'webpack-strip-debug-loader'")).toBe('\n')
     expect(purge('import {Debug} from "webpack-strip-debug-loader"')).toBe('\n')
+    expect(
+      purge(`import {
+      Debug
+    } from 'webpack-strip-debug-loader'`)
+    ).toBe('\n')
   })
 
   it('removes requires for Debug', () => {

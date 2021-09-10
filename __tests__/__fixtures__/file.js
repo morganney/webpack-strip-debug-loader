@@ -3,7 +3,9 @@ import { t } from 'ttag'
 import isObject from 'lodash/isObject'
 
 import { findFilterById, findFilterByType } from './search/filters'
-
+import {
+  Debug
+} from 'webpack-strip-debug-loader'
 import { browserHistory } from '../Routes'
 import * as waterApi from '../waterApi'
 
