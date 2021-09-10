@@ -12,8 +12,8 @@ You must use the wrapper around [`debug`](https://www.npmjs.com/package/debug) n
 
 Do not:
 * Alias your `import` or `require` of `Debug`
-* Spread your `import` of `require` of `Debug` over more than one line
-* Put more than one `debug()` call on a single line
+* Spread your `require` of `Debug` over more than one line
+* Wrap code with `debug();like(this);debug()` on the same line
 * Other crazy things
 
 Just make simple debug statements.
@@ -36,6 +36,7 @@ if (foo) {
     'foo happened',
     foo,
     { ...foo }
+    someFunc(foo)
   )
 }
 ```
