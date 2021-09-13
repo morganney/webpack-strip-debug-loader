@@ -1,6 +1,8 @@
-# webpack-strip-debug-loader
+# [`webpack-strip-debug-loader`](https://www.npmjs.com/package/webpack-strip-debug-loader)
 
-Removes [`debug`](https://www.npmjs.com/package/debug) usage from your source code during Webpack builds.
+![CI](https://github.com/morganney/webpack-strip-debug-loader/actions/workflows/ci.yml/badge.svg)
+
+Removes [`debug`](https://www.npmjs.com/package/debug) usage from your source code during webpack builds.
 
 ## Usage
 
@@ -22,13 +24,13 @@ Just make simple debug statements.
 import { Debug } from 'webpack-strip-debug-loader'
 
 // Or use require if you prefer that
-const { Debug } = require("webpack-strip-debug-loader")
+const { Debug } = require('webpack-strip-debug-loader')
 
-const debug = Debug("feature")
+const debug = Debug('feature')
 const debugFoo = Debug('foo')
 
 if (somethingOfInterestHappens) {
-  debug("something happened")
+  debug('something happened')
 }
 
 if (foo) {
@@ -43,7 +45,7 @@ if (foo) {
 
 ### Stripping
 
-To remove the logging and bundling of debug usage register this loader with Webpack.
+To remove the logging and bundling of debug usage register this loader with webpack.
 
 ```js
 module: {
