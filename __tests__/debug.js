@@ -1,19 +1,12 @@
-import { jest } from '@jest/globals'
-
 import { Debug } from '../src/debug.js'
 
-jest.mock('debug')
-
-let debug = null
-
+/**
+ * Testing that it wraps `debug` has to wait for better
+ * support for mocks when using ESM
+ * @see https://github.com/facebook/jest/pull/10976
+ */
 describe('Debug', () => {
-  beforeAll(async () => {
-    ;({ default: debug } = await import('debug'))
-  })
-
-  it('wraps debug', () => {
-    Debug('namespace')
-
-    expect(debug).toHaveBeenCalled()
+  it('returns a function', () => {
+    expect(Debug('test')).toEqual(expect.any(Function))
   })
 })
