@@ -1,6 +1,7 @@
 # [`webpack-strip-debug-loader`](https://www.npmjs.com/package/webpack-strip-debug-loader)
 
 ![CI](https://github.com/morganney/webpack-strip-debug-loader/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/morganney/webpack-strip-debug-loader/branch/master/graph/badge.svg?token=1DWQL43B8V)](https://codecov.io/gh/morganney/webpack-strip-debug-loader)
 
 Removes [`debug`](https://www.npmjs.com/package/debug) usage from your source code during webpack builds.
 
@@ -42,6 +43,19 @@ if (foo) {
   )
 }
 ```
+
+### Viewing
+
+To see the debug statements open the dev tools panel in your browser. Then update local storage:
+
+```js
+localStorage.debug = 'some:feature'
+
+// Or to view all debug statements
+localStorage.debug = '*'
+```
+
+Now reload your browser. To turn off debug logging you can `localStorage.debug = false`.
 
 ### Stripping
 
