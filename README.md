@@ -16,8 +16,6 @@ You must use the wrapper around [`debug`](https://www.npmjs.com/package/debug) n
 Do not:
 * Alias your `import` or `require` of `Debug`
 * Spread your `require` of `Debug` over more than one line
-* Wrap code with `debug();like(this);debug()` on the same line
-* Other crazy things
 
 Just make simple debug statements.
 
@@ -55,11 +53,11 @@ localStorage.debug = 'some:feature'
 localStorage.debug = '*'
 ```
 
-Now reload your browser. To turn off debug logging you can `localStorage.debug = false`.
+Now reload your browser. To turn off debugging you can `localStorage.debug = false`.
 
 ### Stripping
 
-To remove the logging and bundling of debug usage register this loader with webpack.
+To remove the logging and bundling of `debug` usage register this loader with webpack.
 
 ```js
 module: {
