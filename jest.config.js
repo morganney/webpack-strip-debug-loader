@@ -9,7 +9,7 @@ export default {
      * Has to wait for better ESM suport for webpack loaders
      * @see https://github.com/webpack/loader-runner/issues/61
      */
-    '!**/__tests__/loader.js',
+    '!**/__tests__/integration.js',
     '!**/__tests__/__fixtures__/*.js'
   ],
   transform: {}
