@@ -12,7 +12,10 @@ module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: '2020',
-    sourceType: 'module'
+    sourceType: 'module',
+    babelOptions: {
+      plugins: ['@babel/plugin-syntax-import-attributes']
+    }
   },
   plugins: ['jest', 'prettier']
 }
