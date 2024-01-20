@@ -1,7 +1,10 @@
 # [`webpack-strip-debug-loader`](https://www.npmjs.com/package/webpack-strip-debug-loader)
 
 ![CI](https://github.com/morganney/webpack-strip-debug-loader/actions/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/morganney/webpack-strip-debug-loader/branch/master/graph/badge.svg?token=1DWQL43B8V)](https://codecov.io/gh/morganney/webpack-strip-debug-loader)
+[![codecov](https://codecov.io/gh/morganney/webpack-strip-debug-loader/branch/main/graph/badge.svg?token=1DWQL43B8V)](https://codecov.io/gh/morganney/webpack-strip-debug-loader)
+
+> [!WARNING]
+> Uses a regex to find `debug` usage, your mileage may vary.
 
 Removes [`debug`](https://www.npmjs.com/package/debug) usage from your source code during webpack builds.
 
